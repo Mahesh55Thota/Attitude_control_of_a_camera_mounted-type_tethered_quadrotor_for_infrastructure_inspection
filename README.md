@@ -410,8 +410,6 @@ K_{15}\int e_{\theta_C}\,dt
 K_{16}\dot{e}_{\theta_C}
 $$
 
----
-
 ## 6.9 Camera PID Gains
 
 The gains used in the simulation are:
