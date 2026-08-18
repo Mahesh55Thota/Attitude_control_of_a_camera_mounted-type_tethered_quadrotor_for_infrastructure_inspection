@@ -377,37 +377,37 @@ This reduces:
 The camera roll error is:
 
 $$
-e_{\phi C}=\phi_{Cd}-\phi_C
+e_{\phi_C} = \phi_{Cd} - \phi_C
 $$
 
 The camera pitch error is:
 
 $$
-e_{\theta C}=\theta_{Cd}-\theta_C
+e_{\theta_C} = \theta_{Cd} - \theta_C
 $$
 
 The roll control input is:
 
 $$
-U_{\phi C}
+U_{\phi_C}
 =
-K_{11}e_{\phi C}
+K_{11}e_{\phi_C}
 +
-K_{12}\int e_{\phi C}dt
+K_{12}\int e_{\phi_C}\,dt
 +
-K_{13}\dot e_{\phi C}
+K_{13}\dot{e}_{\phi_C}
 $$
 
 The pitch control input is:
 
 $$
-U_{\theta C}
+U_{\theta_C}
 =
-K_{14}e_{\theta C}
+K_{14}e_{\theta_C}
 +
-K_{15}\int e_{\theta C}dt
+K_{15}\int e_{\theta_C}\,dt
 +
-K_{16}\dot e_{\theta C}
+K_{16}\dot{e}_{\theta_C}
 $$
 
 ---
