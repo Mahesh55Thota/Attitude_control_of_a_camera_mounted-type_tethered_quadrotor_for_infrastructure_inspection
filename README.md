@@ -1,6 +1,6 @@
 <p align="center">
   <img src="assets/amrita_logo.jpg"
-       alt="logo-branding-amrita-universiy-2024.jpeg "
+       alt="Amrita Vishwa Vidyapeetham Logo"
        width="300">
 </p>
 
