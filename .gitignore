@@ -1,0 +1,9 @@
+# Simulink generated cache/build files
+slprj/
+*.slxc
+*.autosave
+*.asv
+
+# OS files
+.DS_Store
+Thumbs.db
