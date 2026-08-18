@@ -1,0 +1,1 @@
+# Attitude_control_of_a_camera_mounted-type_tethered_quadrotor_for_infrastructure_inspection
