@@ -1,19 +1,15 @@
 <p align="center">
-  <img src="images/amrita-logo.jpeg"
+  <img src="assets/amrita_logo.jpg"
        alt="Amrita Vishwa Vidyapeetham Logo"
-       width="450">
+       width="300">
 </p>
 
-<h1 align="center">
-Attitude Control of a Camera-Mounted Tethered Quadrotor
-</h1>
+<h1 align="center">Attitude Control of a Camera-Mounted Tethered Quadrotor</h1>
 
 <p align="center">
   <b>2-DOF Camera Stabilization and Tether-Based Position Sensing</b><br>
   Amrita Vishwa Vidyapeetham
 </p>
-
----
 
 # Team Members
 
