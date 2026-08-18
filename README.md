@@ -1,7 +1,7 @@
 <p align="center">
   <img src="assets/amrita_logo.jpg"
        alt="Amrita Vishwa Vidyapeetham Logo"
-       width="900">
+       width="700">
 </p>
 
 <h1 align="center">Attitude Control of a Camera-Mounted Tethered Quadrotor</h1>
