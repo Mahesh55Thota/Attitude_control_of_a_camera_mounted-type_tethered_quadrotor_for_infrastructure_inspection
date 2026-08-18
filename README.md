@@ -15,10 +15,10 @@
 
 | S. No. | Name | Roll Number | Email |
 |---:|---|---|---|
-| 1 | G Chaitanya Varma | CB.SC.U4AIE24017 | — |
-| 2 | M Jaya Krishna Sai |CB.SC.U4AIE24030  | — |
-| 3 | S Sathwik |CB.SC.U4AIE24051 | — |
-| 4 | S V Dhiraj | CB.SC.U4AIE24052 | — |
+| 1 | G Chaitanya Varma | CB.SC.U4AIE24017 | chaitanyavarmagadiraju143@gmail.com |
+| 2 | M Jaya Krishna Sai |CB.SC.U4AIE24030  | maradajayakrishnasai@gmail.com |
+| 3 | S Sathwik |CB.SC.U4AIE24051 | s.sathwik333@gmail.com |
+| 4 | S V Dhiraj | CB.SC.U4AIE24052 | dhirajsolleti2007@gmail.com |
 | 5 | TMSK Maheswar | CB.SC.U4AIE24058 | maheswar99155@gmail.com |
 
 ---
