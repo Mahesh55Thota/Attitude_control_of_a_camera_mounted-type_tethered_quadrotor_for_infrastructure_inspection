@@ -17,7 +17,7 @@
 
 | S. No. | Name | Roll Number | Email |
 |---:|---|---|---|
-| 1 | Your Name | Your Roll Number | — |
+| 1 | G Chaitanya Varma| CB.SC.U4AIE24017 | — |
 | 2 | Team Member 2 | Roll Number | — |
 | 3 | Team Member 3 | Roll Number | — |
 | 4 | Team Member 4 | Roll Number | — |
