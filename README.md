@@ -15,11 +15,11 @@
 
 | S. No. | Name | Roll Number | Email |
 |---:|---|---|---|
-| 1 | G Chaitanya Varma | CB.SC.U4AIE24017 | chaitanyavarmagadiraju143@gmail.com |
-| 2 | M Jaya Krishna Sai |CB.SC.U4AIE24030  | maradajayakrishnasai@gmail.com |
-| 3 | S Sathwik |CB.SC.U4AIE24051 | s.sathwik333@gmail.com |
-| 4 | S V Dhiraj | CB.SC.U4AIE24052 | dhirajsolleti2007@gmail.com |
-| 5 | TMSK Maheswar | CB.SC.U4AIE24058 | maheswar99155@gmail.com |
+| 1 | G Chaitanya Varma | CB.SC.U4AIE24017 | cb.sc.u4aie24017@cb.students.amrita.edu |
+| 2 | M Jaya Krishna Sai |CB.SC.U4AIE24030  | cb.sc.u4aie24030@cb.students.amrita.edu |
+| 3 | S Sathwik |CB.SC.U4AIE24051 | cb.sc.u4aie24051@cb.students.amrita.edu|
+| 4 | S V Dhiraj | CB.SC.U4AIE24052 | cb.sc.u4aie24052@cb.students.amrita.edu|
+| 5 | TMSK Maheswar | CB.SC.U4AIE24058 |cb.sc.u4aie24058@cb.students.amrita.edu |
 
 ---
 
