@@ -4,66 +4,99 @@
        width="300">
 </p>
 
-<h1 align="center">Attitude Control of a Camera Mounted-type Tethered Quadrotor for Infrastructure Inspection</h1>
+<h1 align="center">Attitude Control of a Camera-Mounted Tethered Quadrotor</h1>
 
 <p align="center">
-  <b>MATLAB & Simulink Control Simulation</b><br>
+  <b>2-DOF Camera Stabilization and Tether-Based Position Sensing</b><br>
   Amrita Vishwa Vidyapeetham
 </p>
 
 ---
 
+# Team Members
+
+| S. No. | Name | Roll Number | Email |
+|---:|---|---|---|
+| 1 | Your Name | Your Roll Number | — |
+| 2 | Team Member 2 | Roll Number | — |
+| 3 | Team Member 3 | Roll Number | — |
+| 4 | Team Member 4 | Roll Number | — |
+
+---
+
 # Abstract
 
-This project implements a MATLAB and Simulink simulation of a camera-mounted tethered quadrotor for infrastructure inspection. The system is based on the IEEE paper by Keigo Watanabe, Nao Moritoki, and Isaku Nagai.
+This project implements a control-oriented MATLAB/Simulink simulation of a camera-mounted tethered quadrotor for infrastructure inspection. The system is based on the reference paper by Keigo Watanabe, Nao Moritoki, and Isaku Nagai, which investigates a tethered quadrotor with attitude control and a 2-DOF camera stabilizer.
 
-The simulation covers three main parts: tether-based position detection, quadrotor attitude control using P/PD control, and a 2-DOF camera stabilizer using PID control. The camera stabilizer compensates for roll and pitch motion of the quadrotor so that the camera attitude remains close to the desired orientation.
+The simulation includes tether-based position sensing, roll and pitch attitude control using P and PD controllers, and independent roll and pitch stabilization of the camera using PID control. The quadrotor attitude model uses the measured moments of inertia reported in the paper, while the camera stabilizer uses the reported PID gains.
+
+The project generates simulation plots corresponding to the main control experiments in the paper and also provides an automatically generated Simulink model containing quadrotor attitude dynamics, attitude control, camera stabilization, and tether-position sensing subsystems.
 
 ---
 
 # 1. Introduction
 
-Tethered quadrotors can be used for infrastructure inspection in locations such as tunnels and bridge structures where GPS may be unavailable. The tether provides position information through its inclination angles, while the quadrotor controls its attitude by changing rotor thrust.
+Quadrotors are useful for infrastructure inspection because they can perform vertical take-off, hovering, and maneuvering in areas where conventional inspection equipment may be difficult to install.
 
-When a camera is mounted directly on the quadrotor, body attitude changes can disturb the camera field of view. This project therefore simulates a 2-DOF camera stabilizer that controls camera roll and pitch independently.
+The reference work considers a tethered quadrotor for inspection of structures such as tunnels and bridges. A tether provides a method of determining the quadrotor position without relying on GPS, which can be unavailable in tunnels or beneath bridge structures.
 
-The model follows the control equations and parameters reported in the reference paper.
+When a camera is directly mounted on the quadrotor, changes in the body attitude can also change the camera field of view. To overcome this problem, the project uses a 2-DOF camera stabilizer that controls camera roll and pitch independently.
+
+The complete simulation therefore focuses on three main parts:
+
+- Tether-based position sensing
+- Quadrotor attitude control
+- 2-DOF camera attitude stabilization
 
 ---
 
 # 2. Problem Statement
 
-The objective is to simulate a tethered quadrotor that can:
+The objective of this project is to develop and simulate a tethered quadrotor control system capable of maintaining stable quadrotor attitude and a stable camera view during infrastructure inspection.
 
-- Estimate its position from tether inclination and length.
-- Control roll, pitch, and yaw attitude.
+The system should:
+
+- Estimate the quadrotor position from tether inclination.
+- Control quadrotor roll, pitch, and yaw attitude.
 - Compare P and PD attitude control.
-- Stabilize a mounted camera in roll and pitch.
-- Maintain the camera close to a zero-degree desired attitude during platform motion.
+- Stabilize camera roll and pitch using a PID controller.
+- Maintain the camera attitude close to the desired reference.
+- Provide MATLAB numerical simulation results.
+- Provide an equivalent MATLAB/Simulink control model.
 
 ---
 
 # 3. Objectives
 
-### 3.1 Tether-Based Position Detection
+The main objectives of the project are:
 
-Calculate the quadrotor position `(x, y, z)` from tether inclination angles and tether length.
+### 3.1 Tether-Based Position Sensing
+
+Calculate the quadrotor position from tether length and tether inclination angles.
 
 ### 3.2 Quadrotor Attitude Control
 
-Implement P and PD controllers for roll and pitch attitude control.
+Implement attitude control for roll, pitch, and yaw using the control equations described in the reference paper.
 
-### 3.3 Camera Stabilization
+### 3.3 P vs PD Controller Comparison
 
-Implement a 2-DOF PID controller for camera roll and pitch.
+Compare proportional control with proportional-derivative control for roll and pitch attitude stabilization.
 
-### 3.4 Simulation and Visualization
+### 3.4 Camera Stabilization
 
-Generate MATLAB plots corresponding to the roll, pitch, and camera stabilization experiments described in the paper.
+Develop a 2-DOF camera stabilizer for independent roll and pitch control.
 
-### 3.5 Simulink Implementation
+### 3.5 PID Control
 
-Build an interactive Simulink model containing the quadrotor attitude dynamics, controllers, tether position sensing, and camera stabilizer.
+Implement PID control for the camera stabilizer to maintain the camera near the desired attitude.
+
+### 3.6 MATLAB Simulation
+
+Implement the mathematical models using numerical integration and generate the required plots.
+
+### 3.7 Simulink Model
+
+Automatically construct an interactive Simulink model containing the major subsystems of the proposed control architecture.
 
 ---
 
@@ -71,124 +104,275 @@ Build an interactive Simulink model containing the quadrotor attitude dynamics, 
 
 ## Attitude Control of a Camera Mounted-type Tethered Quadrotor for Infrastructure Inspection
 
-**Authors:** Keigo Watanabe, Nao Moritoki, Isaku Nagai  
-**Affiliation:** Graduate School of Natural Science and Technology, Okayama University
+The project is based on the study:
 
-The paper presents a tethered quadrotor for infrastructure inspection and describes the control of a 2-DOF camera stabilizer. The quadrotor attitude is controlled using PD control, while the camera stabilizer uses PID control.
+**Keigo Watanabe, Nao Moritoki, and Isaku Nagai, "Attitude Control of a Camera Mounted-type Tethered Quadrotor for Infrastructure Inspection."**
 
-The paper also experimentally compares P and PD attitude control and demonstrates that the camera roll and pitch can be maintained near 0° while the supporting mechanism is inclined by ±45°.
+The paper develops and experimentally evaluates a tethered quadrotor for infrastructure inspection. It specifically describes quadrotor attitude control and a 2-DOF camera stabilizer.
+
+### Main Contributions of the Paper
+
+- Tether-based position detection
+- Quadrotor attitude control using PD control
+- 2-DOF camera stabilizer
+- Camera roll and pitch stabilization
+- Experimental comparison of P and PD attitude control
+- Experimental verification of camera stabilization
+
+### Relation to the Present Project
+
+The present project implements the mathematical control equations and reported physical parameters from the paper in MATLAB and Simulink.
+
+The project is a simulation-based implementation of the control concepts and is not claimed to reproduce every physical detail of the experimental hardware.
 
 ---
 
-# 5. System Overview
+# 5. Project Scope
+
+The project focuses on the attitude-control and camera-stabilization portions of the tethered quadrotor system.
+
+The overall control architecture is:
 
 ```text
-                 TETHERED QUADROTOR SYSTEM
-                           │
-          ┌────────────────┼────────────────┐
-          │                │                │
-          ▼                ▼                ▼
-   Tether Position    Quadrotor Attitude   Camera
-      Detection           Control         Stabilizer
-          │                │                │
-      α, β, l          Roll/Pitch/Yaw     Roll/Pitch
-          │                │                │
-          ▼                ▼                ▼
-       x, y, z           P / PD            PID
-          │                │                │
-          └────────────────┼────────────────┘
-                           ▼
-                    MATLAB / Simulink
+              Tether Inclination
+                     │
+                     ▼
+          Tether Position Sensing
+                     │
+                 x, y, z
+                     │
+                     ▼
+          Quadrotor Attitude Control
+             │       │       │
+             ▼       ▼       ▼
+           Roll    Pitch     Yaw
+             │       │       │
+             └───────┼───────┘
+                     │
+                     ▼
+              Camera Mounted
+                     │
+              Body Disturbance
+                     │
+                     ▼
+           2-DOF Camera PID
+              │          │
+              ▼          ▼
+          Camera Roll  Camera Pitch
 ```
+
+The implementation primarily evaluates attitude control, tether position equations, and camera stabilization.
 
 ---
 
 # 6. Methodology
 
-## 6.1 Tether Position Detection
+## 6.1 Simulation Environment
 
-The tether inclination angles are represented by `α` and `β`, and the tether length is `l`.
+The project is implemented using:
 
-The position is calculated using:
+- MATLAB
+- MATLAB Simulink
+- Numerical ODE integration
+- MATLAB plotting functions
 
-$$
-x=z\tan\alpha
-$$
-
-$$
-y=z\tan\beta
-$$
-
-and:
-
-$$
-z=-\sqrt{
-\frac{l^2(\cos\alpha)^2(\cos\beta)^2}
-{(\cos\alpha)^2+(\cos\beta)^2-(\cos\alpha)^2(\cos\beta)^2}
-}
-$$
-
-The MATLAB helper function `tether_pos_func.m` implements these equations.
+The MATLAB script performs the numerical simulations directly, while `build_simulink_model.m` creates the corresponding Simulink model.
 
 ---
 
-## 6.2 Quadrotor Attitude Control
+## 6.2 Quadrotor Model
 
-The quadrotor attitude controller uses:
+The quadrotor has four rotors and is represented using its principal moments of inertia.
 
-- Roll angle `φ`
-- Pitch angle `θ`
-- Yaw angle `ψ`
+The measured moments of inertia used in the project are:
 
-The roll controller is:
+| Parameter | Value | Unit |
+|---|---:|---|
+| Mass | 1.2 | kg |
+| Gravity | 9.81 | m/s² |
+| Tether length | 0.25 | m |
+| Ix | 0.01910 | kg·m² |
+| Iy | 0.01910 | kg·m² |
+| Iz | 0.03083 | kg·m² |
+
+The inertia values correspond to the measured values reported in Table I of the reference paper.
+
+---
+
+## 6.3 Tether Position Sensing
+
+The tether inclination angles are represented by:
+
+- `alpha` — inclination in the Ex direction
+- `beta` — inclination in the Ey direction
+- `l` — tether length
+
+The position equations are:
+
+$$
+x = z\tan(\alpha)
+$$
+
+$$
+y = z\tan(\beta)
+$$
+
+The vertical position is calculated using:
+
+$$
+z =
+-\sqrt{
+\frac{
+l^2(\cos\alpha)^2(\cos\beta)^2
+}{
+(\cos\alpha)^2+(\cos\beta)^2-(\cos\alpha)^2(\cos\beta)^2
+}}
+$$
+
+The implementation is contained in:
+
+```text
+tether_pos_func.m
+```
+
+For the verification case used in `main.m`:
+
+```text
+Tether length = 0.25 m
+alpha = 15°
+beta  = 10°
+```
+
+the calculated values are approximately:
+
+```text
+z = -0.2381 m
+x = -0.0638 m
+y = -0.0420 m
+```
+
+---
+
+## 6.4 Quadrotor Attitude Control
+
+The quadrotor attitude controller uses P/PD control.
+
+### Roll Control
+
+The control input is:
 
 $$
 U_2=-K_1(\phi-\phi_d)-K_2\dot{\phi}
 $$
 
-The pitch controller is:
+where:
+
+- $\phi$ = roll angle
+- $\phi_d$ = desired roll angle
+- $K_1$ = proportional gain
+- $K_2$ = derivative gain
+
+### Pitch Control
+
+The control input is:
 
 $$
 U_3=-K_3(\theta-\theta_d)-K_4\dot{\theta}
 $$
 
-The yaw controller is:
+where:
+
+- $\theta$ = pitch angle
+- $\theta_d$ = desired pitch angle
+- $K_3$ = proportional gain
+- $K_4$ = derivative gain
+
+### Yaw Control
+
+The project also defines the yaw controller using:
 
 $$
 U_4=-K_5(\psi-\psi_d)-K_6\dot{\psi}
 $$
 
-The project compares P-only and PD control for roll and pitch.
+The main numerical comparison focuses on roll and pitch.
 
 ---
 
-## 6.3 Position Control
+## 6.5 Controller Gains
 
-The paper defines the desired pitch and roll angles from position error as:
+The attitude-control gains used in the project are:
 
-$$
-\theta_d=-K_7(x-x_d)-K_8\dot{x}
-$$
+| Controller | Gain | Value |
+|---|---|---:|
+| Roll P | K1 | 0.625 |
+| Roll D | K2 | 0.170 |
+| Pitch P | K3 | 0.810 |
+| Pitch D | K4 | 0.340 |
+| Yaw P | K5 | 0.370 |
+| Yaw D | K6 | 0.100 |
 
-$$
-\phi_d=-K_9(y-y_d)-K_{10}\dot{y}
-$$
-
-These equations are included in the project parameter definitions for the outer position-control loop.
+The roll and pitch gains are based on the gains reported in the paper's attitude-control experiment.
 
 ---
 
-## 6.4 2-DOF Camera Stabilizer
+## 6.6 P and PD Control Simulation
 
-The camera stabilizer has two controlled degrees of freedom:
+A 10-second numerical simulation is performed for both roll and pitch.
+
+### Roll
+
+The simulation compares:
 
 ```text
-Camera Stabilizer
-       │
-       ├── Roll  (φC)
-       │
-       └── Pitch (θC)
+P Controller
+     vs
+PD Controller
 ```
+
+The roll disturbance is represented numerically using sinusoidal disturbance terms.
+
+### Pitch
+
+Similarly:
+
+```text
+P Controller
+     vs
+PD Controller
+```
+
+The pitch simulation also uses sinusoidal disturbance terms.
+
+The purpose is to demonstrate the effect of the derivative term on attitude stabilization.
+
+---
+
+## 6.7 2-DOF Camera Stabilizer
+
+The camera stabilizer consists of two independently controlled axes:
+
+```text
+             Camera Stabilizer
+                  │
+          ┌───────┴───────┐
+          ▼               ▼
+       Roll Axis       Pitch Axis
+          │               │
+       Servo 1         Servo 2
+```
+
+The yaw degree of freedom is not included in the stabilizer. The reference paper explains that yaw motion of the stabilizer can be replaced by the yaw control of the main quadrotor body.
+
+This reduces:
+
+- Mechanism weight
+- Energy consumption
+- Mechanical complexity
+
+---
+
+## 6.8 Camera PID Control
 
 The camera roll error is:
 
@@ -196,13 +380,13 @@ $$
 e_{\phi C}=\phi_{Cd}-\phi_C
 $$
 
-and the pitch error is:
+The camera pitch error is:
 
 $$
 e_{\theta C}=\theta_{Cd}-\theta_C
 $$
 
-The PID controllers are:
+The roll control input is:
 
 $$
 U_{\phi C}
@@ -214,6 +398,8 @@ K_{12}\int e_{\phi C}dt
 K_{13}\dot e_{\phi C}
 $$
 
+The pitch control input is:
+
 $$
 U_{\theta C}
 =
@@ -224,145 +410,315 @@ K_{15}\int e_{\theta C}dt
 K_{16}\dot e_{\theta C}
 $$
 
-The stabilizer therefore compensates for platform inclination while maintaining the desired camera orientation.
+---
+
+## 6.9 Camera PID Gains
+
+The gains used in the simulation are:
+
+| Axis | P | I | D |
+|---|---:|---:|---:|
+| Camera Roll | 170.0 | 2.0 | 0.1 |
+| Camera Pitch | 170.0 | 2.0 | 0.1 |
+
+These are the gain values reported for the camera stabilization experiment in the reference paper.
 
 ---
 
-# 7. Simulation Parameters
+## 6.10 Camera Disturbance
 
-| Parameter | Value |
-| :--- | :---: |
-| Quadrotor mass | 1.2 kg |
-| Gravity | 9.81 m/s² |
-| Tether length | 0.25 m |
-| Measured `Ix` | 0.01910 kg·m² |
-| Measured `Iy` | 0.01910 kg·m² |
-| Measured `Iz` | 0.03083 kg·m² |
-| Desired roll | 0° |
-| Desired pitch | 0° |
-| Desired yaw | 0° |
+The camera stabilizer is tested against a simulated manipulator/body inclination of approximately ±45°.
 
-### Attitude Controller Gains
+The disturbance profile is:
 
-| Gain | Value |
-| :--- | :---: |
-| `K1` Roll P | 0.625 |
-| `K2` Roll D | 0.170 |
-| `K3` Pitch P | 0.810 |
-| `K4` Pitch D | 0.340 |
-| `K5` Yaw P | 0.370 |
-| `K6` Yaw D | 0.100 |
+```text
+0 s → 7 s       : 0° → +45°
+7 s → 21 s      : +45° → -45°
+21 s → 28 s     : -45° → 0°
+```
 
-### Position Controller Gains
-
-| Gain | Value |
-| :--- | :---: |
-| `K7` | 0.50 |
-| `K8` | 0.20 |
-| `K9` | 0.50 |
-| `K10` | 0.20 |
-
-### Camera PID Gains
-
-| Gain | Value |
-| :--- | :---: |
-| `K11` Roll P | 170.0 |
-| `K12` Roll I | 2.0 |
-| `K13` Roll D | 0.1 |
-| `K14` Pitch P | 170.0 |
-| `K15` Pitch I | 2.0 |
-| `K16` Pitch D | 0.1 |
+The purpose is to test whether the camera can remain close to its desired zero-degree attitude while the base changes orientation.
 
 ---
 
-# 8. Simulation Workflow
+## 6.11 Numerical Simulation
+
+The `main.m` script performs the complete numerical simulation.
+
+The process is:
 
 ```text
 Load Parameters
-       ↓
+      ↓
 Tether Position Calculation
-       ↓
-Roll P vs PD Simulation
-       ↓
-Pitch P vs PD Simulation
-       ↓
+      ↓
+Roll P Simulation
+      ↓
+Roll PD Simulation
+      ↓
+Pitch P Simulation
+      ↓
+Pitch PD Simulation
+      ↓
 Camera Roll PID Simulation
-       ↓
+      ↓
 Camera Pitch PID Simulation
-       ↓
-Generate MATLAB Plots
-       ↓
-Build Simulink Model
+      ↓
+Generate Plots
+```
+
+The numerical integration is performed using a time-stepping approach for angular acceleration, angular velocity, and angle.
+
+---
+
+## 6.12 Simulink Model
+
+The file:
+
+```text
+build_simulink_model.m
+```
+
+automatically creates the Simulink model:
+
+```text
+tethered_quadrotor_model
+```
+
+The major subsystems are:
+
+```text
+tethered_quadrotor_model
+│
+├── Quadrotor_Rotational_Dynamics
+│
+├── Quadrotor_Attitude_Controller
+│
+├── Camera_Stabilizer_2DOF
+│
+└── Tether_Position_Sensing
+```
+
+### Quadrotor Rotational Dynamics
+
+This subsystem represents roll, pitch, and yaw angular dynamics using the principal moments of inertia.
+
+### Quadrotor Attitude Controller
+
+This subsystem contains the roll and pitch attitude controllers.
+
+### Camera Stabilizer 2-DOF
+
+This subsystem contains:
+
+- Camera roll PID
+- Camera pitch PID
+- Servo dynamics
+
+### Tether Position Sensing
+
+This subsystem receives:
+
+```text
+alpha
+beta
+tether length
+```
+
+and calculates:
+
+```text
+x
+y
+z
+```
+
+using `tether_pos_func`.
+
+---
+
+## 6.13 Complete Control Loop
+
+The complete simulation can be summarized as:
+
+```text
+        Tether Angles
+             │
+             ▼
+     Position Calculation
+             │
+          x, y, z
+             │
+             ▼
+     Quadrotor Attitude
+        Controller
+             │
+      ┌──────┼──────┐
+      ▼      ▼      ▼
+    Roll   Pitch   Yaw
+      │      │      │
+      └──────┼──────┘
+             │
+             ▼
+      Camera Disturbance
+             │
+             ▼
+       2-DOF PID
+        Controller
+         │       │
+         ▼       ▼
+       Roll    Pitch
+        Camera Stabilization
 ```
 
 ---
 
-# 9. Simulation Outputs
+# 7. Experimental Setup
 
-The MATLAB simulation generates three main result figures.
+The numerical experiments reproduce the control conditions represented in the reference paper.
 
-### Figure 8 — Roll Attitude Control
+### Attitude Control
 
-```text
-P Control
-   vs
-PD Control
-```
+- Simulation duration: 10 seconds
+- Roll: P vs PD
+- Pitch: P vs PD
+- Desired roll: 0°
+- Desired pitch: 0°
 
-This compares the roll response obtained using P and PD control.
+### Camera Stabilization
 
-### Figure 9 — Pitch Attitude Control
+- Simulation duration: 28 seconds
+- Base/manipulator inclination: approximately ±45°
+- Camera desired roll: 0°
+- Camera desired pitch: 0°
 
-```text
-P Control
-   vs
-PD Control
-```
-
-This compares the pitch response obtained using P and PD control.
-
-### Figure 11 — Camera Attitude
-
-```text
-Camera Roll      vs      Manipulator Angle
-Camera Pitch     vs      Manipulator Angle
-```
-
-The camera is commanded to maintain approximately 0° while the supporting mechanism is moved through the ±45° range used in the reference experiment.
+The paper experimentally suspended the quadrotor for attitude tests and used a robot manipulator to incline the camera stabilizer by ±45° for camera stabilization tests.
 
 ---
 
-# 10. Simulink Model
+# 8. Simulation Results
 
-The project includes a MATLAB script that programmatically builds the Simulink model:
+## 8.1 Roll Attitude Control
 
-```text
-tethered_quadrotor_model.slx
-```
-
-The main model contains:
+The project generates a comparison between:
 
 ```text
-Tether Position Sensing
-          │
-          ▼
-Quadrotor Attitude Controller
-          │
-          ▼
-Quadrotor Rotational Dynamics
-          │
-          ▼
-Camera Stabilizer
-   ┌──────┴──────┐
-   ▼             ▼
-Roll PID      Pitch PID
+(a) Roll control using P controller
+(b) Roll control using PD controller
 ```
 
-The Simulink model provides a graphical representation of the control system and allows the control blocks and signals to be inspected.
+The reference paper reports that the experimental roll error was reduced from a maximum of approximately 12.0° with P control to approximately 8.7° with PD control.
+
+The generated MATLAB plot is used to visualize the corresponding simulated response.
+
+---
+
+## 8.2 Pitch Attitude Control
+
+The project generates:
+
+```text
+(a) Pitch control using P controller
+(b) Pitch control using PD controller
+```
+
+The reference paper reports a maximum pitch error of approximately -10.9° with P control and approximately 4.1° with PD control.
+
+This demonstrates the improvement obtained by adding the derivative term.
+
+---
+
+## 8.3 Camera Roll Stabilization
+
+The simulation compares:
+
+```text
+Camera roll angle
+       vs
+Manipulator/base angle
+```
+
+The base is moved through approximately +45° and -45°.
+
+The objective is to maintain the camera roll close to 0° while the base angle changes.
+
+---
+
+## 8.4 Camera Pitch Stabilization
+
+The same procedure is applied to camera pitch.
+
+The simulation compares:
+
+```text
+Camera pitch angle
+       vs
+Manipulator/base angle
+```
+
+The PID controller attempts to compensate for the base motion and maintain the camera attitude near the desired zero-degree reference.
+
+---
+
+## 8.5 Reference Experimental Results
+
+The reference paper reports that both camera roll and camera pitch were maintained at approximately 0° even when the robot-arm angle was changed.
+
+The reported camera PID gains were:
+
+```text
+K11 = 170.0
+K12 = 2.0
+K13 = 0.1
+
+K14 = 170.0
+K15 = 2.0
+K16 = 0.1
+```
+
+---
+
+# 9. Performance Analysis
+
+The project evaluates the control system using the following observations:
+
+### Attitude Control
+
+- P control provides proportional correction based on attitude error.
+- PD control additionally uses angular velocity feedback.
+- The derivative term improves damping and reduces attitude error in the reference experiment.
+
+### Camera Stabilization
+
+- The 2-DOF stabilizer independently controls roll and pitch.
+- The PID controller compensates for base/manipulator inclination.
+- The camera is intended to remain close to the desired zero-degree attitude.
+
+### Tether Position
+
+- Tether inclination and length are used to calculate the quadrotor position.
+- The method does not require GPS position information for this calculation.
+
+---
+
+# 10. Key Observations
+
+The project demonstrates the following:
+
+1. Tether inclination can be used to estimate quadrotor position.
+2. PD control provides better attitude stabilization than P control in the reference experiment.
+3. A derivative term provides additional damping for roll and pitch control.
+4. A 2-DOF camera stabilizer can independently control camera roll and pitch.
+5. PID control can compensate for changes in the camera-supporting base.
+6. Removing the stabilizer yaw axis reduces the mechanical complexity of the camera system.
+7. MATLAB provides the numerical control simulation.
+8. Simulink provides an interactive block-based representation of the control system.
 
 ---
 
 # 11. Project Structure
+
+The main project structure is:
 
 ```text
 Tethered_Quadrotor_Project/
@@ -373,29 +729,44 @@ Tethered_Quadrotor_Project/
 ├── params.m
 ├── tether_pos_func.m
 ├── build_simulink_model.m
-└── tethered_quadrotor_model.slx
+└── slprj/
+    └── sim/
+        └── varcache/
 ```
+
+### File Description
+
+| File | Purpose |
+|---|---|
+| `main.m` | Main numerical simulation and plotting script |
+| `params.m` | Physical parameters and controller gains |
+| `tether_pos_func.m` | Tether-based position calculation |
+| `build_simulink_model.m` | Automatically builds the Simulink model |
+| `slprj/` | MATLAB/Simulink generated simulation files |
+| `README.md` | Project documentation |
 
 ---
 
-# 12. Files Description
+# 12. Technologies Used
 
-| File | Description |
-| :--- | :--- |
-| `main.m` | Master MATLAB script for numerical simulation and result plots |
-| `params.m` | Physical parameters, controller gains, and reference values |
-| `tether_pos_func.m` | Calculates tether-based `x`, `y`, and `z` position |
-| `build_simulink_model.m` | Programmatically builds the Simulink model |
-| `tethered_quadrotor_model.slx` | Main graphical Simulink control model |
-| `README.md` | Project documentation |
+| Technology | Purpose |
+|---|---|
+| MATLAB | Numerical simulation |
+| Simulink | Block-based control simulation |
+| MATLAB ODE/Time Integration | Attitude dynamics simulation |
+| MATLAB Plotting | Simulation result visualization |
+| PID Control | Camera stabilization |
+| PD Control | Quadrotor attitude stabilization |
 
 ---
 
 # 13. How to Run
 
-## Option 1 — MATLAB Numerical Simulation
+## Step 1 - Open MATLAB
 
-Open MATLAB and navigate to the project folder.
+Open MATLAB and set the project folder as the current working directory.
+
+## Step 2 - Run the Main Simulation
 
 Run:
 
@@ -405,16 +776,17 @@ main
 
 The script will:
 
-- Load the system parameters.
-- Verify tether-based position sensing.
-- Simulate roll P and PD control.
-- Simulate pitch P and PD control.
-- Simulate the 2-DOF camera stabilizer.
-- Generate the corresponding plots.
+- Load the parameters
+- Verify tether position sensing
+- Simulate roll P control
+- Simulate roll PD control
+- Simulate pitch P control
+- Simulate pitch PD control
+- Simulate camera roll PID stabilization
+- Simulate camera pitch PID stabilization
+- Generate the result plots
 
----
-
-## Option 2 — Simulink Simulation
+## Step 3 - Build the Simulink Model
 
 Run:
 
@@ -425,76 +797,147 @@ build_simulink_model
 This creates and opens:
 
 ```text
-tethered_quadrotor_model.slx
+tethered_quadrotor_model
 ```
 
-Then click **Run (▶)** in Simulink to execute the graphical model.
+## Step 4 - Run the Simulink Simulation
+
+After the model is opened, run the model using the Simulink **Run** button.
 
 ---
 
-# 14. Reference Experimental Results
+# 14. Simulation Outputs
 
-The reference paper reported:
+The MATLAB simulation generates three main result figures.
 
-| Experiment | P Control | PD Control |
-| :--- | :---: | :---: |
-| Roll maximum error | 12.0° | 8.7° |
-| Pitch maximum error | -10.9° | 4.1° |
+### Figure 1 - Roll Attitude Control
 
-The paper therefore reported improved attitude-error performance using PD control compared with P control.
+```text
+Roll P Control
+Roll PD Control
+```
 
-For the camera stabilizer, the experimental results showed that camera roll and pitch could be maintained near 0° while the robot arm was inclined by ±45°.
+### Figure 2 - Pitch Attitude Control
+
+```text
+Pitch P Control
+Pitch PD Control
+```
+
+### Figure 3 - Camera Attitude Stabilization
+
+```text
+Camera Roll + Manipulator Angle
+Camera Pitch + Manipulator Angle
+```
+
+The plots show the response of the control system over time.
 
 ---
 
-# 15. Key Observations
+# 15. Parameters and Controller Gains
 
-1. PD control provides damping through the derivative term.
-2. The tether inclination provides information for estimating quadrotor position.
-3. The camera stabilizer uses two controlled degrees of freedom: roll and pitch.
-4. PID control compensates for camera orientation changes.
-5. Removing the stabilizer's yaw degree of freedom reduces the stabilizer's complexity, weight, and energy requirement.
-6. MATLAB provides the numerical simulation while Simulink provides the graphical control-system implementation.
+### Physical Parameters
+
+```text
+Mass       = 1.2 kg
+Gravity    = 9.81 m/s²
+Tether     = 0.25 m
+
+Ix         = 0.01910 kg·m²
+Iy         = 0.01910 kg·m²
+Iz         = 0.03083 kg·m²
+```
+
+### Quadrotor Attitude Controller
+
+```text
+Roll:
+K1 = 0.625
+K2 = 0.170
+
+Pitch:
+K3 = 0.810
+K4 = 0.340
+
+Yaw:
+K5 = 0.370
+K6 = 0.100
+```
+
+### Camera PID Controller
+
+```text
+Camera Roll:
+K11 = 170.0
+K12 = 2.0
+K13 = 0.1
+
+Camera Pitch:
+K14 = 170.0
+K15 = 2.0
+K16 = 0.1
+```
 
 ---
 
 # 16. Limitations
 
-- The current implementation is a control-oriented numerical simulation.
-- The tether is represented through the position equations rather than a complete physical tether-force model.
-- The quadrotor model does not represent complete rotor, motor, aerodynamic, and 6-DOF physical dynamics.
-- The simulation uses mathematical disturbance signals for the P/PD comparison.
-- The camera stabilizer is represented through simplified rotational dynamics.
-- The results should not be interpreted as an exact reproduction of the physical experimental setup.
+The current project has the following limitations:
+
+- The implementation is a control-oriented simulation rather than a complete physical replica of the experimental quadrotor.
+- The numerical disturbance signals used for roll and pitch are simulation assumptions and are not identical to the physical disturbances in the paper.
+- Full aerodynamic effects are not modeled.
+- Individual rotor motor dynamics are simplified.
+- Complete tether tension dynamics are not modeled.
+- Full 6-DOF translational and rotational dynamics are not included in the current numerical model.
+- Real IMU sensor noise is not included.
+- Real RC servo dynamics are simplified.
+- The current project focuses mainly on attitude, tether position sensing, and camera stabilization.
 
 ---
 
 # 17. Future Work
 
-- Develop a complete 6-DOF quadrotor dynamic model.
-- Add individual rotor and motor dynamics.
-- Include tether tension and tether-force dynamics.
-- Add full x-y-z position control.
-- Add autonomous yaw control.
-- Include IMU and sensor-noise models.
-- Implement the complete quadrotor and camera system in a physics simulator.
-- Validate the controller using real hardware.
+Future improvements can include:
+
+- Developing a complete 6-DOF quadrotor dynamic model.
+- Modeling individual rotor thrust and motor dynamics.
+- Adding realistic tether tension and tether dynamics.
+- Adding IMU sensor noise and measurement filtering.
+- Implementing complete x-y-z position control.
+- Implementing autonomous tether-based position control.
+- Adding complete yaw control and trajectory control.
+- Modeling the camera and servo mechanical dynamics more accurately.
+- Validating the simulation against experimental measurements.
+- Implementing the complete system in a physics simulator such as PyBullet.
+- Testing the controller on real quadrotor hardware.
+- Integrating infrastructure-inspection camera processing.
 
 ---
 
-# 18. Technologies Used
+# 18. Conclusion
 
-| Technology | Purpose |
-| :--- | :--- |
-| MATLAB | Numerical simulation |
-| Simulink | Graphical control-system simulation |
-| MATLAB ODE / Numerical Integration | Attitude and camera dynamics |
-| Control Systems | P, PD, and PID controllers |
+This project implements a MATLAB/Simulink control-oriented model of a camera-mounted tethered quadrotor for infrastructure inspection.
+
+The system combines tether-based position sensing, quadrotor roll/pitch attitude control, P and PD controller comparison, and a 2-DOF PID camera stabilizer.
+
+The MATLAB implementation provides numerical simulations and plots, while the Simulink implementation provides a block-based representation of the major control subsystems.
+
+The reference paper experimentally demonstrated improved roll and pitch attitude control using PD control compared with P control, and demonstrated that the 2-DOF camera stabilizer could maintain camera roll and pitch close to 0° under ±45° base inclination.
+
+Overall, the project provides a simulation framework for studying attitude stabilization and camera stabilization of a tethered quadrotor intended for infrastructure inspection.
 
 ---
 
 # 19. References
 
-1. K. Watanabe, N. Moritoki, and I. Nagai, **"Attitude Control of a Camera Mounted-type Tethered Quadrotor for Infrastructure Inspection,"** IEEE, 2017.
-2. Y. Ouchi, K. Watanabe, K. Kinoshita, and I. Nagai, **"Position Control of an X4-Flyer Using a Tether,"** International Journal of Smart Material and Mechatronics, 2014.
-3. S. Bouabdallah, P. Murrieri, and R. Siegwart, **"Towards Autonomous Indoor Micro VTOL,"** Autonomous Robots, 2005.
+1. Keigo Watanabe, Nao Moritoki, and Isaku Nagai, **"Attitude Control of a Camera Mounted-type Tethered Quadrotor for Infrastructure Inspection,"** IEEE conference paper.
+
+2. Watanabe et al., **"Development of a Camera-mounted Tethered Quadrotor for Inspecting Infrastructures,"** IECON 2016.
+
+3. Ouchi et al., **"Position Control of an X4-Flyer Using a Tether,"** International Journal of Smart Material and Mechatronics, 2014.
+
+4. S. Lupashin and R. D'Andrea, **"Stabilization of a Flying Vehicle on a Taut Tether using Inertial Sensing,"** IROS, 2003.
+
+5. S. Bouabdallah, P. Murrieri, and R. Siegwart, **"Towards Autonomous Indoor Micro VTOL,"** Autonomous Robots, 2005.
