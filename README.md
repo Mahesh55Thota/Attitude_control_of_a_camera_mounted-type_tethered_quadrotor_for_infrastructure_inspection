@@ -17,7 +17,7 @@
 
 | S. No. | Name | Roll Number | Email |
 |---:|---|---|---|
-| 1 | G Chaitanya Varma| CB.SC.U4AIE24017 | — |
+| 1 | Your Name | Your Roll Number | — |
 | 2 | Team Member 2 | Roll Number | — |
 | 3 | Team Member 3 | Roll Number | — |
 | 4 | Team Member 4 | Roll Number | — |
@@ -209,25 +209,13 @@ The tether inclination angles are represented by:
 
 The position equations are:
 
-$$
-x = z\tan(\alpha)
-$$
+$$x = z\tan(\alpha)$$
 
-$$
-y = z\tan(\beta)
-$$
+$$y = z\tan(\beta)$$
 
 The vertical position is calculated using:
 
-$$
-z =
--\sqrt{
-\frac{
-l^2(\cos\alpha)^2(\cos\beta)^2
-}{
-(\cos\alpha)^2+(\cos\beta)^2-(\cos\alpha)^2(\cos\beta)^2
-}}
-$$
+$$z = -\sqrt{\dfrac{l^2(\cos\alpha)^2(\cos\beta)^2}{(\cos\alpha)^2+(\cos\beta)^2-(\cos\alpha)^2(\cos\beta)^2}}$$
 
 The implementation is contained in:
 
@@ -377,38 +365,24 @@ This reduces:
 The camera roll error is:
 
 $$
-e_{\phi_C} = \phi_{Cd} - \phi_C
+e_{\phi C}=\phi_{Cd}-\phi_C
 $$
 
 The camera pitch error is:
 
 $$
-e_{\theta_C} = \theta_{Cd} - \theta_C
+e_{\theta C}=\theta_{Cd}-\theta_C
 $$
 
 The roll control input is:
 
-$$
-U_{\phi_C}
-=
-K_{11}e_{\phi_C}
-+
-K_{12}\int e_{\phi_C}\,dt
-+
-K_{13}\dot{e}_{\phi_C}
-$$
+$$U_{\phi C} = K_{11}e_{\phi C} + K_{12}\int e_{\phi C}\,dt + K_{13}\dot{e}_{\phi C}$$
 
 The pitch control input is:
 
-$$
-U_{\theta_C}
-=
-K_{14}e_{\theta_C}
-+
-K_{15}\int e_{\theta_C}\,dt
-+
-K_{16}\dot{e}_{\theta_C}
-$$
+$$U_{\theta C} = K_{14}e_{\theta C} + K_{15}\int e_{\theta C}\,dt + K_{16}\dot{e}_{\theta C}$$
+
+---
 
 ## 6.9 Camera PID Gains
 
