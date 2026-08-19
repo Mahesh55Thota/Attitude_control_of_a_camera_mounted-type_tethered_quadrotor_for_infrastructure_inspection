@@ -239,6 +239,79 @@ y = -0.0420 m
 ```
 
 ---
+## 6.4 Generation of Desired Roll and Pitch
+
+The tether provides the current position of the quadrotor as $(x,y,z)$. The desired position is defined by $(x_d,y_d)$.
+
+The reference paper explains that the quadrotor can move in the $E_X$ direction by changing the pitch angle $\theta$, and in the $E_Y$ direction by changing the roll angle $\phi$. Therefore, position control is achieved by generating suitable desired pitch and roll angles for the inner attitude controller. :contentReference[oaicite:1]{index=1}
+
+Let:
+
+- $x$ = current position in the $E_X$ direction
+- $y$ = current position in the $E_Y$ direction
+- $x_d$ = desired position in the $E_X$ direction
+- $y_d$ = desired position in the $E_Y$ direction
+- $\dot{x}$ = velocity in the $E_X$ direction
+- $\dot{y}$ = velocity in the $E_Y$ direction
+- $K_7,K_8,K_9,K_{10}$ = position-control gains
+
+The desired pitch angle is calculated using the position error in the $E_X$ direction:
+
+$$
+\theta_d=-K_7(x-x_d)-K_8\dot{x}
+$$
+
+The desired roll angle is calculated using the position error in the $E_Y$ direction:
+
+$$
+\phi_d=-K_9(y-y_d)-K_{10}\dot{y}
+$$
+
+These are the position-control equations (7) and (8) given in the reference paper. :contentReference[oaicite:2]{index=2}
+
+The equations contain two terms:
+
+### Desired Pitch
+
+$$
+\theta_d=-K_7(x-x_d)-K_8\dot{x}
+$$
+
+The first term,
+
+$$
+-K_7(x-x_d)
+$$
+
+is the proportional position correction. It depends on how far the quadrotor is from the desired $x$ position.
+
+The second term,
+
+$$
+-K_8\dot{x}
+$$
+
+provides velocity feedback and helps reduce excessive motion.
+
+### Desired Roll
+
+$$
+\phi_d=-K_9(y-y_d)-K_{10}\dot{y}
+$$
+
+Similarly, the first term,
+
+$$
+-K_9(y-y_d)
+$$
+
+depends on the error between the current and desired $y$ position.
+
+The second term,
+
+$$
+-K_{10}\dot{y}
+$$
 
 ## 6.4 Quadrotor Attitude Control
 
