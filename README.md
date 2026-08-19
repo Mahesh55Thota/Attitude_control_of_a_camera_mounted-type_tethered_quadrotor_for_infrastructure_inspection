@@ -500,6 +500,7 @@ The reference paper reports that the experimental roll error was reduced from a 
 The generated MATLAB plot is used to visualize the corresponding simulated response.
 
 ---
+<p align="center"> <img src="pitch_P_vs_PD.jpeg" alt="Pitch angle response: P control vs PD control" width="650"> </p>
 
 ## 6.2 Pitch Attitude Control
 
@@ -515,6 +516,7 @@ The reference paper reports a maximum pitch error of approximately -10.9° with 
 This demonstrates the improvement obtained by adding the derivative term.
 
 ---
+<p align="center"> <img src="roll_P_vs_PD.jpeg" alt="Roll angle response: P control vs PD control" width="650"> </p>
 
 ## 6.3 Camera Roll Stabilization
 
@@ -531,6 +533,7 @@ The base is moved through approximately +45° and -45°.
 The objective is to maintain the camera roll close to 0° while the base angle changes.
 
 ---
+<p align="center"> <img src="camera_roll_stabilization.jpeg" alt="Camera roll stabilization vs base angle" width="600"> </p>
 
 ## 6.4 Camera Pitch Stabilization
 
@@ -547,24 +550,9 @@ Manipulator/base angle
 The PID controller attempts to compensate for the base motion and maintain the camera attitude near the desired zero-degree reference.
 
 ---
+<p align="center"> <img src="camera_pitch_stabilization.jpeg" alt="Camera pitch stabilization vs base angle" width="600"> </p>
 
-## 6.5 Reference Experimental Results
 
-The reference paper reports that both camera roll and camera pitch were maintained at approximately 0° even when the robot-arm angle was changed.
-
-The reported camera PID gains were:
-
-```text
-K11 = 170.0
-K12 = 2.0
-K13 = 0.1
-
-K14 = 170.0
-K15 = 2.0
-K16 = 0.1
-```
-
----
 
 # 7. Performance Analysis
 
