@@ -25,17 +25,17 @@
 
 # Abstract
 
-This project implements a control-oriented MATLAB/Simulink simulation of a camera-mounted tethered quadrotor for infrastructure inspection. The system is based on the reference paper by Keigo Watanabe, Nao Moritoki, and Isaku Nagai, which investigates a tethered quadrotor with attitude control and a 2-DOF camera stabilizer.
+This project presents a control system for a tethered quadrotor with a camera for infrastructure inspection. The work is based on the reference paper by Keigo Watanabe, Nao Moritoki, and Isaku Nagai. The quadrotor is connected to the ground by a tether, which is used for position sensing. The position of the quadrotor is determined using the tether geometry and measured angles. Based on the position, the required drone attitude is controlled.
 
-The simulation includes tether-based position sensing, roll and pitch attitude control using P and PD controllers, and independent roll and pitch stabilization of the camera using PID control. The quadrotor attitude model uses the measured moments of inertia reported in the paper, while the camera stabilizer uses the reported PID gains.
+The project focuses mainly on roll and pitch attitude control of the quadrotor using P and PD controllers. A 2-DOF camera stabilizer is also considered to compensate for the motion of the quadrotor and maintain the camera orientation. PID control is used for the camera's roll and pitch stabilization. The simulation uses the moments of inertia and controller parameters reported in the reference paper.
 
-The project generates simulation plots corresponding to the main control experiments in the paper and also provides an automatically generated Simulink model containing quadrotor attitude dynamics, attitude control, camera stabilization, and tether-position sensing subsystems.
+MATLAB is used to simulate the control system and generate the corresponding response plots. In addition, a Simulink model is developed to represent the major parts of the system, including tether-based position sensing, quadrotor attitude dynamics, attitude control, and camera stabilization. The simulation helps to understand how the quadrotor and camera respond to disturbances and how the controllers maintain the desired orientation.
 
 ---
 
 # 1. Introduction
 
-Quadrotors are useful for infrastructure inspection because they can perform vertical take-off, hovering, and maneuvering in areas where conventional inspection equipment may be difficult to install.
+Quadrotors are useful for infrastructure inspection because they can take off vertically, hover, and move easily around structures where it may be difficult to use conventional inspection equipment.
 
 The reference work considers a tethered quadrotor for inspection of structures such as tunnels and bridges. A tether provides a method of determining the quadrotor position without relying on GPS, which can be unavailable in tunnels or beneath bridge structures.
 
