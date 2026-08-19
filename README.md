@@ -49,22 +49,6 @@ The complete simulation therefore focuses on three main parts:
 
 ---
 
-# 2. Problem Statement
-
-The objective of this project is to develop and simulate a tethered quadrotor control system capable of maintaining stable quadrotor attitude and a stable camera view during infrastructure inspection.
-
-The system should:
-
-- Estimate the quadrotor position from tether inclination.
-- Control quadrotor roll, pitch, and yaw attitude.
-- Compare P and PD attitude control.
-- Stabilize camera roll and pitch using a PID controller.
-- Maintain the camera attitude close to the desired reference.
-- Provide MATLAB numerical simulation results.
-- Provide an equivalent MATLAB/Simulink control model.
-
----
-
 # 3. Objectives
 
 The main objectives of the project are:
@@ -123,44 +107,6 @@ The paper develops and experimentally evaluates a tethered quadrotor for infrast
 The present project implements the mathematical control equations and reported physical parameters from the paper in MATLAB and Simulink.
 
 The project is a simulation-based implementation of the control concepts and is not claimed to reproduce every physical detail of the experimental hardware.
-
----
-
-# 5. Project Scope
-
-The project focuses on the attitude-control and camera-stabilization portions of the tethered quadrotor system.
-
-The overall control architecture is:
-
-```text
-              Tether Inclination
-                     │
-                     ▼
-          Tether Position Sensing
-                     │
-                 x, y, z
-                     │
-                     ▼
-          Quadrotor Attitude Control
-             │       │       │
-             ▼       ▼       ▼
-           Roll    Pitch     Yaw
-             │       │       │
-             └───────┼───────┘
-                     │
-                     ▼
-              Camera Mounted
-                     │
-              Body Disturbance
-                     │
-                     ▼
-           2-DOF Camera PID
-              │          │
-              ▼          ▼
-          Camera Roll  Camera Pitch
-```
-
-The implementation primarily evaluates attitude control, tether position equations, and camera stabilization.
 
 ---
 
