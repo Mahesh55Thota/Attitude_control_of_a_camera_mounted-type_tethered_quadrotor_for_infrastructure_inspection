@@ -1,0 +1,15 @@
+# Final Project Review (FPR)
+- Gazebo quadrotor model
+- Position estimation using the tether geometry
+- Position PD controller K7–K10
+- Attitude PD controller K1–K6
+- IMU feedback
+- 2-DOF camera/gimbal model
+- MPU-9150 equivalent in simulation
+- Camera PID K11–K16
+- Servo control
+- Gain tuning plan
+- Required plots for the final review
+- Final demonstration scenario
+- Step-by-step implementation process
+- Complete system architecture
